@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "of13-factory"
+version = "0.1.0"
+description = "Generate validated OpenFOAM Foundation v13 case directories from STEP/IGES geometry"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cadquery>=2.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["of13_factory"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
